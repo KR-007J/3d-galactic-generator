@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Presets Gallery | Particle Universe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#23005c",
+              "on-primary-container": "#006970",
+              "secondary-fixed": "#ffd7f5",
+              "surface-dim": "#121222",
+              "on-secondary-container": "#500050",
+              "tertiary-fixed-dim": "#d0bcff",
+              "secondary": "#ffabf3",
+              "tertiary": "#faf3ff",
+              "outline-variant": "#3b494b",
+              "surface-container-low": "#1a1a2b",
+              "on-primary-fixed": "#002022",
+              "inverse-surface": "#e3e0f8",
+              "tertiary-container": "#e1d2ff",
+              "on-secondary-fixed-variant": "#810081",
+              "error": "#ffb4ab",
+              "surface-container-high": "#29283a",
+              "surface-tint": "#00dbe9",
+              "surface-variant": "#333345",
+              "surface-bright": "#38374a",
+              "on-background": "#e3e0f8",
+              "on-secondary-fixed": "#380038",
+              "outline": "#849495",
+              "on-surface": "#e3e0f8",
+              "primary-fixed-dim": "#00dbe9",
+              "secondary-container": "#fe00fe",
+              "on-secondary": "#5b005b",
+              "on-tertiary": "#3c0091",
+              "error-container": "#93000a",
+              "inverse-primary": "#006970",
+              "on-primary-fixed-variant": "#004f54",
+              "tertiary-fixed": "#e9ddff",
+              "on-surface-variant": "#b9cacb",
+              "background": "#121222",
+              "on-tertiary-container": "#6d3bd7",
+              "secondary-fixed-dim": "#ffabf3",
+              "surface-container-lowest": "#0c0c1d",
+              "inverse-on-surface": "#2f2f40",
+              "on-tertiary-fixed-variant": "#5516be",
+              "on-error-container": "#ffdad6",
+              "surface-container": "#1e1e2f",
+              "primary-container": "#00f0ff",
+              "primary": "#dbfcff",
+              "primary-fixed": "#7df4ff",
+              "on-primary": "#00363a",
+              "on-error": "#690005",
+              "surface-container-highest": "#333345",
+              "surface": "#121222"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a1a;
+            color: #e3e0f8;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 34, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00f0ff 0%, #d0bcff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.15);
+            background: rgba(51, 51, 69, 0.8);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full flex justify-between items-center px-8 h-20 bg-slate-950/60 backdrop-blur-xl border-b border-white/10 z-50">
+<div class="text-2xl font-black text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]">
+            ✦ Particle Universe
+        </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-widest" href="#">Explore</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 text-sm font-medium uppercase tracking-widest" href="#">Library</a>
+<a class="text-slate-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-widest" href="#">Lab</a>
+<a class="text-slate-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-widest" href="#">Docs</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-white/5 transition-all text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-20 h-[calc(100vh-5rem)] w-64 bg-slate-900/40 backdrop-blur-2xl border-r border-white/5 flex flex-col p-4 z-40 hidden lg:flex">
+<div class="mb-8 px-4">
+<div class="text-lg font-bold text-cyan-400 uppercase tracking-tighter">Navigator</div>
+<div class="text-xs text-slate-500 uppercase">Deep Space Operator</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-400 border-r-4 border-cyan-400 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-sm font-medium uppercase tracking-tighter">Presets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:backdrop-brightness-125 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="text-sm font-medium uppercase tracking-tighter">Templates</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:backdrop-brightness-125 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="text-sm font-medium uppercase tracking-tighter">Assets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:backdrop-brightness-125 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">biotech</span>
+<span class="text-sm font-medium uppercase tracking-tighter">Experiments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-200 hover:backdrop-brightness-125 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium uppercase tracking-tighter">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 pt-4 border-t border-white/5">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">description</span>
+<span class="text-xs uppercase tracking-tighter">Docs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-xs uppercase tracking-tighter">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-28 pb-20 px-8 lg:ml-64">
+<!-- Header Section -->
+<header class="mb-12 max-w-4xl">
+<h1 class="text-5xl md:text-6xl font-black tracking-tight text-gradient mb-4">Preset Gallery</h1>
+<p class="text-lg text-on-surface-variant font-medium">Explore and load beautiful particle effects for your cosmic simulations.</p>
+</header>
+<!-- Filter Section -->
+<section class="mb-12 space-y-6">
+<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+<!-- Search -->
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface py-3 pl-12 pr-4 rounded-t-lg glass-panel transition-all outline-none" placeholder="Search presets..." type="text"/>
+</div>
+<!-- Sort -->
+<div class="flex items-center gap-3 self-end md:self-auto">
+<span class="text-sm font-bold uppercase tracking-widest text-outline">Sort By:</span>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-outline-variant hover:border-primary-container transition-all">
+<span class="text-sm font-bold">Popular</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-bold text-sm tracking-widest glow-cyan">ALL</button>
+<button class="px-6 py-2 rounded-full glass-panel border border-outline-variant text-on-surface font-bold text-sm tracking-widest hover:border-primary-container transition-all">SPACE</button>
+<button class="px-6 py-2 rounded-full glass-panel border border-outline-variant text-on-surface font-bold text-sm tracking-widest hover:border-primary-container transition-all">NATURE</button>
+<button class="px-6 py-2 rounded-full glass-panel border border-outline-variant text-on-surface font-bold text-sm tracking-widest hover:border-primary-container transition-all">ABSTRACT</button>
+<button class="px-6 py-2 rounded-full glass-panel border border-outline-variant text-on-surface font-bold text-sm tracking-widest hover:border-primary-container transition-all">WEATHER</button>
+<button class="px-6 py-2 rounded-full glass-panel border border-outline-variant text-on-surface font-bold text-sm tracking-widest hover:border-primary-container transition-all">CUSTOM</button>
+</div>
+</section>
+<!-- Main Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="vibrant swirling blue and purple galaxy spiral particle effect with deep space background and distant stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC_5GlN-zcjARZWQIJfyd-yadgaiBmxDe0VKhwaEABbULz4nUw7XByyqXR8ceZXeUjyd_8eo_WEqClU_f9EU_kp8Z2txHLPrCYWzKRhr_k9_2pJS86E4iQbJB_PXQytRjg9odfpnpAL69iEPQSgz97nlp0ALB_YY9O9LAFgvgCJAPLzIPiag1A2xyZmQXziLl8REZQQyT-tmiWI6my0z_6DyvuGasVUIairzU_ZHz00XtvJ5hGGC3DTMsgGTvDgWAhyShNtyXcDgyO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Galaxy Spiral</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Majestic rotating cosmic structures.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Space</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="vertical cyan and emerald green light streaks falling like rain against a dark futuristic background with soft motion blur" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKKsGYMLNe-XJrl4IDnxr7O2mE7ZB8DsakO36KWDsqYgte0QXbVyTQDyUX4UjSZCGXnu1FYg-2t9G4pjdL9FvIS8xB68mjrZwRptVNLv2YUojjuMWzSdPqiHW1qryk994uLYRYkS9nwszcQBUiKDVtGBrjpf8bShCeKdEZ_g5vMaxsDM88tTF_ARqiEWZMmqJpEalfqdTp4RgJAiYM4okkuezQ3RT39R9qUy6TBPFCdsweXroXKiGt7D6nGopz5Hr4s2T71vbEmTlL"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Neon Rain</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Cyberpunk vertical particle downpour.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Abstract</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="explosive orange and bright yellow plasma bursts and solar flares radiating from a central glowing core" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2h6haQWfQxVn4z952tmdj48IwwdRn2fErSvPJJYD52BcM0mq3XssaDDu7kLSPaQtY-igguM2DawpmyCYNnKEKrRZuAZOIvDSN-Ahc7QfGK4X5qcGYkkgyAONXYQLecejncrZUysHp0BdgMLkfoqZBtUfcj7XDOMa7xF5k-vacuD7SCKT3vZ2EBxkmJ2A0vp1YIIlCfxn3mEpD9w-LZjAy6v2eRttOA-iqdLdbpJlGFvXvmgS0crgs1__fJFXvO29WNDUb8O3N81jy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Solar Flare</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">High-intensity thermal plasma bursts.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Space</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="gentle golden glowing dots floating randomly in a dark magical forest with soft bokeh effects and moonlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrtkqXxvsEE27cRIi8c-jbSVg4pPIc_7ucNhkyEUGkTDo9j7SJrovt8I_uqTPsWgkUZSEx6QPziyIGZABxHLjPCjE3SYLFcLYI-PX3UjpAcjxvqBlrUnEl3uHNmI-u2_Hl_fUPBjQfBNw0d5e1UzIhFQ5kdFLhRBP6Tk4eFaSPE8O4WHHUL1VksAoVsQPhXXxSLRkSP88vQi7MUhpCaiFxB9ytk776PzkjPk6CCO6n8yWzaupzL_gxwldXwXJrxBUQipYUTpRUXo4G"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Fireflies</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.6</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Dreamy organic light particles.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Nature</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="wavy emerald green and cyan light curtains dancing across a star-filled arctic night sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtrXsSy-H4lCPrPsyMGPmGEIjL5WsnVTjrgzjc5vpriKQ7A-SnfQ0ltbV_OCG2rMW5bWuiRcUfC5DWd_5GEBxbx4pcKbZJhkj6SC2QSMsL2BsiNAu-ulou8o-odUrR5LUaMrxnT786yTGjPAgcCYvWtb-T1JONI93b2UxmifOfXfZg9-27_M2AOyqXf-4TEGW6pqrUIVndPKYEjYZEkHA3fBWC_2Nbsh3zkXXCBxe9RGF2RIWjrye0sA8NFNkphqs6vz28Z9q-8A0z"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Northern Lights</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Atmospheric aurora borealis simulation.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Nature</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="fine white and soft blue sparkling dust particles drifting through a dark void with subtle nebular clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCErbqw7H1ASjhu3AbfxN-3TyN6wKHFr7sT8L5BVGJFOCXJhn_zAdpduzIsNPjMIdMxz4Uj1Z3AxcWYs91AE4ugLDQTTeeo611PZq7vdZyOKslUQyl0B50zS7ATkn7f13fow7zQCAcIRYhSaOKH8E5IcH7Z8Q41Gc6hjToXpFnrTjEAdEtnLXlPUOBk3AexdHwCq89ddnV2amQGGags5bqjfHHFav1adGrLWURi5fnpd9tq5BA7wJsaSGfs02Ou7w-dfQto6fSabw8p"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Cosmic Dust</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.5</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Fine interstellar particulate matter.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Space</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="dramatic white and electric blue lightning streaks flashing through dark stormy clouds with intense atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ynsm3hLMcxer7JF9jNJFMHmcDO4aGqnRtKF-HrZCwswUGAKzy1vk0TabVLW8gX-5vT4wnNycK5vh5gFGF_uA_hvHL8cyjg2Bt-ZE_knvfITgDfIPHqNwZusfKNGqBEP9G400pvWdTptNhK6zDrCfMWP6OR02JVymGiYEp-1dSgx8UMaoBa47Jrae-n_VZ7gMkGrdkA6c0Dr-S9iMt5qmp2qqGPcYDu8XmLwCfWiflRqZkAtqUf_g0TV3xYCrNCnKeZKa_qffDXBa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Lightning Storm</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.7</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Chaotic electric discharge patterns.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Weather</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="glass-panel rounded-xl overflow-hidden card-hover transition-all duration-300 border border-white/5 flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img alt="" class="w-full h-full object-cover opacity-80" data-alt="flowing magenta and lime green light ribbons twisting through a dark midnight sky with subtle star clusters" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjFI091Xa2uPlhEqmPQBJBBtvR4zke3t_hkvGoPn1gBB0Ku0GdAoZRvRIXHH8KQFBiX0FS9hZcBAkvt-mK7CpJw_SPNS_b7X592uIYgoZCEx5y5MvYpGfP2D877A0Mjx4m-o7xiD7tGoEqj4SCY0VXbXgz1tPX9GAXPS3ita1v4W8XVVQQ0ewcNMA2eOpLCk4wo3uiPsvSsfNPuqEo0q3jjRxdaHD2fcCVtKmnm8aL9Zs_9jr7v5o59y1rgmXS3osM6zDagotnPJvX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Aurora Borealis</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold">4.8</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant line-clamp-1 mb-4">Shimmering curtains of polar light.</p>
+<div class="mb-6">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] px-2 py-1 rounded bg-surface-container-high text-primary-fixed-dim">Nature</span>
+</div>
+<div class="mt-auto flex gap-3">
+<button class="flex-1 bg-gradient-to-br from-primary-container to-tertiary-fixed-dim text-on-primary-container font-black py-2 rounded-lg text-sm uppercase tracking-widest hover:brightness-110 transition-all">Load</button>
+<button class="px-3 border border-outline-variant rounded-lg hover:border-secondary transition-all text-on-surface-variant hover:text-secondary">
+<span class="material-symbols-outlined text-lg">favorite</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center gap-4">
+<button class="p-2 glass-panel rounded-full hover:border-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary-container text-on-primary-container font-black glow-cyan">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:text-primary-container transition-all font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:text-primary-container transition-all font-bold">3</button>
+<span class="flex items-center justify-center w-10 text-slate-500">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel hover:text-primary-container transition-all font-bold">12</button>
+</div>
+<button class="p-2 glass-panel rounded-full hover:border-primary-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-primary-container to-secondary-container rounded-full flex items-center justify-center text-on-primary-container shadow-[0_0_30px_rgba(0,240,255,0.4)] active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

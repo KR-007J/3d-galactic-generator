@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Particle Universe | Advanced Controls</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary-dim": "#ff51fa",
+                "primary": "#8ff5ff",
+                "primary-fixed": "#00eefc",
+                "on-primary": "#005d63",
+                "on-error-container": "#ffa8a3",
+                "surface-container": "#18182b",
+                "on-error": "#490006",
+                "inverse-primary": "#006a71",
+                "tertiary-fixed": "#bda2ff",
+                "on-primary-fixed-variant": "#005e64",
+                "background": "#0c0c1d",
+                "on-tertiary-container": "#000000",
+                "error-container": "#9f0519",
+                "surface-container-lowest": "#000000",
+                "error-dim": "#d7383b",
+                "on-secondary-fixed": "#620061",
+                "primary-fixed-dim": "#00deec",
+                "on-tertiary": "#280067",
+                "surface-dim": "#0c0c1d",
+                "on-secondary-container": "#fff5f9",
+                "secondary": "#ff51fa",
+                "secondary-fixed": "#ffbdf3",
+                "tertiary-container": "#8f60fa",
+                "surface-tint": "#8ff5ff",
+                "tertiary": "#ac8aff",
+                "outline-variant": "#474659",
+                "on-primary-fixed": "#003f43",
+                "inverse-surface": "#fcf8ff",
+                "primary-container": "#00eefc",
+                "surface": "#0c0c1d",
+                "surface-container-highest": "#24233b",
+                "on-surface-variant": "#aba9bf",
+                "secondary-fixed-dim": "#ffa6f3",
+                "on-tertiary-fixed-variant": "#4600a8",
+                "inverse-on-surface": "#545366",
+                "on-background": "#e6e3fb",
+                "outline": "#757388",
+                "on-surface": "#e6e3fb",
+                "secondary-container": "#a900a9",
+                "on-secondary": "#400040",
+                "primary-dim": "#00deec",
+                "tertiary-fixed-dim": "#b091ff",
+                "tertiary-dim": "#8455ef",
+                "on-tertiary-fixed": "#1f0052",
+                "on-primary-container": "#005359",
+                "surface-container-high": "#1d1d33",
+                "on-secondary-fixed-variant": "#920091",
+                "error": "#ff716c",
+                "surface-variant": "#24233b",
+                "surface-bright": "#2a2a43",
+                "surface-container-low": "#121223"
+              },
+              fontFamily: {
+                "headline": ["Space Grotesk"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(36, 35, 59, 0.4);
+            backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(143, 245, 255, 0.1);
+        }
+        .ion-gradient-text {
+            background: linear-gradient(135deg, #8ff5ff 0%, #ff51fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #1d1d33;
+            height: 4px;
+            border-radius: 2px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #8ff5ff;
+            margin-top: -6px;
+            box-shadow: 0 0 10px #8ff5ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 bg-cyan-950/30 backdrop-blur-xl rounded-2xl mt-4 mx-4 w-[calc(100%-2rem)] border-t border-cyan-400/20 shadow-[0_20px_40px_rgba(0,240,255,0.15)]">
+<div class="flex items-center gap-6">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/5 transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500 font-headline">✦ Particle Universe</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 ml-8">
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-headline tracking-tight" href="#">Generator</a>
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-headline tracking-tight" href="#">Gallery</a>
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-headline tracking-tight" href="#">Lab</a>
+<a class="text-cyan-300 font-bold border-b-2 border-cyan-400 pb-1 font-headline tracking-tight" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 mr-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">settings</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">help</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors">account_circle</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold glow-primary active:scale-95 duration-200 transition-all">
+                Apply Changes
+            </button>
+</div>
+</header>
+<!-- Side Navigation (Suppressed on settings focus per logic, but here for structural completeness if needed. Using a hidden variant for visual balance) -->
+<aside class="fixed left-0 top-24 bottom-0 w-20 flex flex-col items-center py-8 bg-slate-950/40 backdrop-blur-2xl my-4 ml-4 rounded-3xl shadow-2xl shadow-cyan-900/20 hidden lg:flex">
+<div class="flex flex-col gap-8">
+<div class="p-3 bg-gradient-to-br from-cyan-500/20 to-fuchsia-500/20 text-cyan-300 border-r-2 border-cyan-400 scale-105 rounded-xl">
+<span class="material-symbols-outlined" data-icon="blur_on">blur_on</span>
+</div>
+<div class="p-3 text-slate-500 hover:text-slate-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="cyclone">cyclone</span>
+</div>
+<div class="p-3 text-slate-500 hover:text-slate-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</div>
+<div class="p-3 text-slate-500 hover:text-slate-300 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-6">
+<div class="p-3 text-slate-500 hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<div class="p-3 text-slate-500 hover:text-slate-300 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</div>
+</div>
+</aside>
+<main class="pt-32 pb-20 px-8 lg:pl-32 max-w-7xl mx-auto">
+<div class="mb-12">
+<h1 class="text-5xl font-bold font-headline ion-gradient-text tracking-tighter mb-2">System Config</h1>
+<p class="text-on-surface-variant max-w-2xl font-light">Fine-tune the kinetic ether. Every adjustment recalibrates the molecular simulation in real-time.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Left Column: Properties & Physics -->
+<div class="space-y-8">
+<!-- Particle Properties Card -->
+<section class="glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="grain">grain</span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest text-primary">Particle Properties</h2>
+</div>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Particle Count</label>
+<input class="bg-surface-container-lowest border-none text-primary text-right w-20 rounded-sm focus:ring-1 focus:ring-primary text-sm font-mono" type="number" value="15000"/>
+</div>
+<input class="w-full" max="50000" min="10" type="range" value="15000"/>
+</div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Particle Size</label>
+<span class="text-primary text-sm font-mono">2.5px</span>
+</div>
+<input class="w-full" max="10" min="0.1" step="0.1" type="range" value="2.5"/>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<label class="block text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Lifetime</label>
+<div class="flex items-center gap-3">
+<input class="flex-grow" max="10" min="0.5" step="0.1" type="range" value="3.0"/>
+<span class="text-primary text-xs font-mono">3.0s</span>
+</div>
+</div>
+<div>
+<label class="block text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">Spawn Rate</label>
+<div class="flex items-center gap-3">
+<input class="flex-grow" max="5000" min="100" type="range" value="1200"/>
+<span class="text-primary text-xs font-mono">1.2k</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-6">Velocity Vectors (XYZ)</label>
+<div class="grid grid-cols-3 gap-4">
+<div class="space-y-2">
+<input class="w-full bg-surface-container-lowest border-none text-primary rounded-sm text-xs p-2" placeholder="X" type="number"/>
+<input class="w-full opacity-50" type="range"/>
+</div>
+<div class="space-y-2">
+<input class="w-full bg-surface-container-lowest border-none text-primary rounded-sm text-xs p-2" placeholder="Y" type="number"/>
+<input class="w-full opacity-50" type="range"/>
+</div>
+<div class="space-y-2">
+<input class="w-full bg-surface-container-lowest border-none text-primary rounded-sm text-xs p-2" placeholder="Z" type="number"/>
+<input class="w-full opacity-50" type="range"/>
+</div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Opacity</label>
+<span class="text-primary text-sm font-mono">85%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="85"/>
+</div>
+</div>
+</section>
+<!-- Physics Engine Card -->
+<section class="glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="rocket">rocket</span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest text-secondary">Physics Engine</h2>
+</div>
+<div class="space-y-8">
+<div class="flex items-center justify-between p-4 rounded-lg bg-surface-container-low">
+<div>
+<div class="text-sm font-bold">Gravity Field</div>
+<div class="text-xs text-on-surface-variant">Omnidirectional pull</div>
+</div>
+<div class="flex items-center gap-6">
+<input class="w-32" max="10" min="-10" step="0.5" type="range" value="-1.5"/>
+<div class="w-12 h-6 bg-primary/20 border border-primary/50 rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-4 rounded-lg bg-surface-container-low space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold">Wind Force</span>
+<span class="material-symbols-outlined text-primary text-sm">air</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border-2 border-outline-variant flex items-center justify-center relative">
+<div class="w-1 h-6 bg-primary absolute rounded-full origin-bottom rotate-45" style="bottom: 50%;"></div>
+</div>
+<input class="flex-grow" type="range"/>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low opacity-50 flex flex-col justify-center gap-2">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold">Collision Detection</span>
+<div class="w-12 h-6 bg-slate-800 border border-slate-700 rounded-full relative cursor-not-allowed">
+<div class="absolute left-1 top-1 w-4 h-4 bg-slate-600 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">
+<span>Turbulence Frequency</span>
+<span>Disabled</span>
+</div>
+<input class="w-full cursor-not-allowed" disabled="" type="range"/>
+</div>
+<div>
+<div class="flex justify-between text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4">
+<span>Damping Factor</span>
+<span class="text-primary">0.02</span>
+</div>
+<input class="w-full" max="1" min="0" step="0.01" type="range" value="0.02"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Appearance & Scene -->
+<div class="space-y-8">
+<!-- Appearance Card -->
+<section class="glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary" data-icon="palette">palette</span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest text-tertiary">Appearance</h2>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Color Mode</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low border-none rounded-lg p-3 text-sm focus:ring-1 focus:ring-tertiary appearance-none">
+<option>Gradient</option>
+<option>Solid</option>
+<option>Rainbow</option>
+<option>Velocity-Based</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-500 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold block mb-4">Gradient Editor</label>
+<div class="flex items-center gap-4">
+<div class="w-full h-12 rounded-lg bg-gradient-to-r from-primary to-secondary relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-6 bg-white border-2 border-primary rounded-sm shadow-lg"></div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-6 bg-white border-2 border-secondary rounded-sm shadow-lg"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold block mb-4">Glow Intensity</label>
+<div class="flex items-center gap-2">
+<input class="flex-grow" type="range" value="60"/>
+<span class="text-xs text-primary">60%</span>
+</div>
+</div>
+<div>
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold block mb-4">Trail length</label>
+<div class="flex items-center gap-2">
+<input class="flex-grow" type="range" value="40"/>
+<span class="text-xs text-primary">Med</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Particle Shape</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-primary bg-primary/20 text-primary text-xs font-bold transition-all">Sphere</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-xs font-bold transition-all">Cube</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-xs font-bold transition-all">Star</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-xs font-bold transition-all">Ring</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-xs font-bold transition-all">Triangle</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Scene & Background Card -->
+<section class="glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="landscape">landscape</span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest text-primary">Background &amp; Scene</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-6">
+<div class="space-y-4">
+<label class="text-xs uppercase tracking-widest text-on-surface-variant font-bold">Presets</label>
+<div class="grid grid-cols-1 gap-2">
+<button class="flex items-center gap-3 p-3 rounded-lg bg-primary/10 border border-primary/30 text-primary text-sm font-bold">
+<span class="material-symbols-outlined text-lg">space_dashboard</span> Deep Space
+                                    </button>
+<button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-transparent hover:border-outline-variant text-on-surface-variant text-sm font-bold transition-all">
+<span class="material-symbols-outlined text-lg">filter_drama</span> Nebula
+                                    </button>
+<button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-transparent hover:border-outline-variant text-on-surface-variant text-sm font-bold transition-all">
+<span class="material-symbols-outlined text-lg">grid_on</span> Grid Floor
+                                    </button>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-[10px] uppercase font-bold text-on-surface-variant">BG Color</label>
+<div class="h-10 w-full rounded-md bg-background border border-outline-variant cursor-pointer flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-surface-container-lowest"></div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] uppercase font-bold text-on-surface-variant">Ambient Light</label>
+<div class="h-10 w-full rounded-md bg-surface-container-low border border-outline-variant cursor-pointer flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-cyan-900/40"></div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold">Atmospheric Fog</span>
+<span class="material-symbols-outlined text-primary text-sm" data-weight="fill">cloud</span>
+</div>
+<input class="w-full" type="range"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-primary/5 border border-primary/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">grid_3x3</span>
+<span class="text-xs font-bold uppercase tracking-widest">Show Grid</span>
+</div>
+<div class="w-12 h-6 bg-primary/20 border border-primary/50 rounded-full relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Configuration & Actions -->
+<div class="mt-8 space-y-8">
+<section class="glass-panel p-8 rounded-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="settings_input_component">settings_input_component</span>
+<h2 class="text-xl font-headline font-bold uppercase tracking-widest text-secondary">Configuration</h2>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full border border-outline-variant hover:bg-white/5 transition-all text-sm font-bold">
+<span class="material-symbols-outlined text-lg">upload</span> Import JSON
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full border border-outline-variant hover:bg-white/5 transition-all text-sm font-bold">
+<span class="material-symbols-outlined text-lg">download</span> Export JSON
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full bg-error-container/20 border border-error-container text-error font-bold text-sm hover:bg-error-container/30 transition-all">
+<span class="material-symbols-outlined text-lg">restart_alt</span> Reset Defaults
+                        </button>
+<button class="flex items-center gap-2 px-8 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-black text-sm glow-primary active:scale-95 transition-all">
+                            Save as Preset
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute top-4 right-4 z-10">
+<button class="p-2 bg-slate-800 rounded-md text-slate-400 hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+</button>
+</div>
+<pre class="w-full h-48 overflow-y-auto bg-surface-container-lowest/80 rounded-2xl p-6 text-cyan-500/80 font-mono text-xs border border-outline-variant/20 scrollbar-hide">{
+  "particle_system": {
+    "count": 15000,
+    "size": 2.5,
+    "lifetime": 3.0,
+    "physics": {
+      "gravity": -1.5,
+      "friction": 0.02,
+      "wind": { "angle": 45, "force": 0.5 }
+    },
+    "appearance": {
+      "mode": "gradient",
+      "stops": ["#8ff5ff", "#ff51fa"],
+      "glow": 0.6,
+      "shape": "sphere"
+    }
+  }
+}</pre>
+</div>
+</section>
+</div>
+</main>
+<!-- Visual Enhancements (Background Glows) -->
+<div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary/5 blur-[120px] rounded-full pointer-events-none"></div>
+</body></html>
